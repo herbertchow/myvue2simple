@@ -1,4 +1,5 @@
-# myvue2
+
+# myvue2simple
 
 > vue2_sim
 
