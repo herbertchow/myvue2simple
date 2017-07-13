@@ -11,8 +11,8 @@ body, html {width: 100%; font-weight: normal;display: -webkit-box;-webkit-box-or
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; font-family: "Microsoft YaHei","Helvetica Neue",Arial, HelveticaNeue, Helvetica, "BBAlpha Sans", sans-serif;}
 body{background:#fefefe;opacity: 1;-webkit-transition:opacity 500ms ease-in;transition:opacity 500ms ease-in; }
 a{text-decoration:none;  }
-input{-webkit-appearance:none; }
-*{ outline: none; -webkit-tap-highlight-color: transparent;  -webkit-touch-callout:none;-webkit-focus-ring-color: rgba(0, 0, 0, 0);}
+// input{-webkit-appearance:none; }
+// *{ outline: none; -webkit-tap-highlight-color: transparent;  -webkit-touch-callout:none;-webkit-focus-ring-color: rgba(0, 0, 0, 0);}
 p,a,li,span,input{font-size:0.28rem; }
 h1{
     font-size:0.32rem;
@@ -90,10 +90,13 @@ html{
 }
 
 .clearfix(){
-    display: block;
-    height: 0;
-    content: "\0020";
-    clear: both;
+    *zoom:1;
+    &:after{
+        display: block;
+        height: 0;
+        content: "\0020";
+        clear: both;
+    }
 }
 
 .pre(@style,@value){
