@@ -4,7 +4,7 @@
 
 	      <swipeout-item v-for="item in allTask" :key="item.id" @on-close="handleEvents('on-close')" @on-open="handleEvents('on-open')" transition-mode="follow">
 	        <div slot="right-menu">
-	          <swipeout-button @click.native="onButtonClick('delete')" type="warn">删除</swipeout-button>
+	          <swipeout-button @click.native="onButtonClick(item.id)" type="warn">删除</swipeout-button>
 	        </div>
 	        <div slot="content" class="demo-content vux-1px-t">
 	        {{item.title}}
@@ -51,7 +51,6 @@ export default {
           title:'吃饭要拿发票',
           id:4
         },
-
         {
           title:'买油罐子',
           id:5
@@ -75,8 +74,12 @@ export default {
   	
   },
   methods: {
-  	onButtonClick (type) {
-      alert('on button click ' + type)
+  	onButtonClick (index) {
+      this.allTask.splice(index-1,1);
+      for(var i = 0,l=this.allTask.length;i<l;i++){
+      	this.allTask[i]['id'] = i+1;
+      }
+      // console.log(this.allTask);
     },
     handleEvents (type) {
       console.log('event: ', type)
@@ -95,12 +98,12 @@ export default {
         id:nowId
       });
       this.txtValue = '';
-      vm.$data.allT = this.$data.allTask;
+      vm.$data.allT = this.allTask;
     }
   },
   created: function () {
   	this.$nextTick(function(){
-  		this.$data.allTask = vm.$data.allT;
+  		this.allTask = vm.$data.allT;
   	})
   }
 }
