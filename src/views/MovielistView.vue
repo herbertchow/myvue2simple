@@ -17,6 +17,7 @@ export default {
     return {
       type:'1',
       list:[],
+      // castslist:[],
       page:0,
       footer: {
         title: '查看更多'
@@ -31,8 +32,8 @@ export default {
   },
   methods: {
     initData (data){
-      var castslist = [];
       for(var i=0,l=data.length;i<l;i++){
+        var castslist = [];
         for(var j=0,len=data[i]['casts'].length;j<len;j++){
           castslist.push(data[i]['casts'][j]['name'])
         }
