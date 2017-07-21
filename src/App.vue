@@ -7,15 +7,15 @@
         </div>
         <tabbar slot="bottom">
             <tabbar-item :selected="isSelected==0?true:false"  @on-item-click="onItemClickCb">
-                <span slot="label">Wechat</span>
+                <span slot="label">便签</span>
                 <!-- <span slot="icon">1</span> -->
             </tabbar-item>
             <tabbar-item :selected="isSelected==1?true:false" show-dot @on-item-click="onItemClickCb">
-                <span slot="label">Message</span>
+                <span slot="label">电影</span>
                 <!-- <span slot="icon">1</span> -->
             </tabbar-item>
             <tabbar-item :selected="isSelected==2?true:false" link="/" @on-item-click="onItemClickCb">
-                <span slot="label">Explore</span>
+                <span slot="label">个人</span>
             </tabbar-item>
         </tabbar>
     </view-box>
@@ -26,7 +26,6 @@
 import { Group,Cell,XHeader,ViewBox,Tabbar } from 'vux'
 import { TabbarItem } from 'vux'
 
-console.log(TabbarItem)
 // console.log(vm)
 
 export default {
@@ -65,7 +64,7 @@ export default {
         if(currentIndex === 2){
             this.$router.push('bar')
         }else if(currentIndex === 1){
-            this.$router.push('foo')
+            this.$router.push('mov')
         }else{
             this.$router.push(' ')
         }
@@ -73,7 +72,7 @@ export default {
     initTabStatus:function(){
       if(this.$router.currentRoute.path === '/bar'){
         this.isSelected = 2;
-      }else if(this.$router.currentRoute.path === '/foo'){
+      }else if(this.$router.currentRoute.path === '/mov'){
         this.isSelected = 1;
       }else{
         this.isSelected = 0;
@@ -138,11 +137,11 @@ a {
   color: #42b983;
 }
 
-img{
-  opacity: .5;
-  &.cur{
-    opacity:1;
-  }
-}
+// img{
+//   opacity: .5;
+//   &.cur{
+//     opacity:1;
+//   }
+// }
 
 </style>

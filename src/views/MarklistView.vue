@@ -21,6 +21,7 @@
 
 <script>
 import { Swipeout, SwipeoutItem, SwipeoutButton,XInput,Group,XButton   } from 'vux'
+// import jsonp from 'jsonp'
 
 export default {
   name: 'marklist-view',
@@ -80,6 +81,13 @@ export default {
   },
   created: function () {
   	this.$nextTick(function(){
+  	// 	jsonp('https://api.douban.com/v2/movie/top250?count=8', null, function (err, data) {
+			//   if (err) {
+			//     console.error(err.message);
+			//   } else {
+			//     console.log(data);
+			//   }
+			// });
       if(window.localStorage && window.localStorage.getItem('hbAllTask')){
       	this.allTask = JSON.parse(window.localStorage.getItem('hbAllTask'));
       	return;
