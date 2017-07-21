@@ -42,28 +42,28 @@ var vm = new Vue({
   data:{
   	allT:[
         {
-          title:'今天要买水果',
+          title:'你可以记录自己的便签',
           id:1
         },
         {
-          title:'交物业费',
+          title:'左滑删除',
           id:2
         },
         {
-          title:'记录账目',
+          title:'数据记录在本浏览器，更换即还原默认',
           id:3
         },
         {
-          title:'吃饭要拿发票',
+          title:'清理缓存即可清空数据，还原默认',
           id:4
         },
 
         {
-          title:'买油罐子',
+          title:'比如',
           id:5
         },
         {
-          title:'买米了吗',
+          title:'今天要买水果',
           id:6
         },
         {
