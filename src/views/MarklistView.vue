@@ -34,36 +34,7 @@ export default {
   },
   data () {
     return {
-      allTask:[
-        {
-          title:'今天要买水果',
-          id:1
-        },
-        {
-          title:'交物业费',
-          id:2
-        },
-        {
-          title:'记录账目',
-          id:3
-        },
-        {
-          title:'吃饭要拿发票',
-          id:4
-        },
-        {
-          title:'买油罐子',
-          id:5
-        },
-        {
-          title:'买米了吗',
-          id:6
-        },
-        {
-          title:'闹钟调了吗',
-          id:7
-        }
-      ],
+      allTask:[],
       txtValue:''
     }
   },
@@ -78,6 +49,9 @@ export default {
       this.allTask.splice(index-1,1);
       for(var i = 0,l=this.allTask.length;i<l;i++){
       	this.allTask[i]['id'] = i+1;
+      }
+      if(window.localStorage){
+      	window.localStorage.setItem('hbAllTask',JSON.stringify(this.$data.allTask));
       }
       // console.log(this.allTask);
     },
@@ -98,11 +72,18 @@ export default {
         id:nowId
       });
       this.txtValue = '';
+      if(window.localStorage){
+      	window.localStorage.setItem('hbAllTask',JSON.stringify(this.$data.allTask));
+      }
       vm.$data.allT = this.allTask;
     }
   },
   created: function () {
   	this.$nextTick(function(){
+      if(window.localStorage && window.localStorage.getItem('hbAllTask')){
+      	this.allTask = JSON.parse(window.localStorage.getItem('hbAllTask'));
+      	return;
+      }
   		this.allTask = vm.$data.allT;
   	})
   }
