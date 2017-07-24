@@ -73,7 +73,7 @@ export default {
   .avatar-wrap{
     text-align: left;
     span{
-      width: 250px;
+      width: 60%;
       display: inline-block;
       margin-left: 15px;
       float: left;
@@ -81,6 +81,9 @@ export default {
     img{
       vertical-align: top;
       float: left;
+      width: 25%;
+      max-width: 70px;
+      max-height: 70px;
     }
     i{
       display: block;
@@ -135,6 +138,7 @@ export default {
     padding: 0;
 	}
   .vux-cell-box > div{
+    width: 100%;
     &:after{
       display: block;
       height: 0;
