@@ -73,7 +73,7 @@ export default {
   .avatar-wrap{
     text-align: left;
     span{
-      width: 280px;
+      width: 250px;
       display: inline-block;
       margin-left: 10px;
     }
