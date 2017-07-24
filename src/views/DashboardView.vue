@@ -75,10 +75,12 @@ export default {
     span{
       width: 250px;
       display: inline-block;
-      margin-left: 10px;
+      margin-left: 15px;
+      float: left;
     }
     img{
       vertical-align: top;
+      float: left;
     }
     i{
       display: block;
@@ -132,4 +134,12 @@ export default {
     text-align: center;
     padding: 0;
 	}
+  .vux-cell-box > div{
+    &:after{
+      display: block;
+      height: 0;
+      content: "\0020";
+      clear: both;
+    }
+  }
 </style>
