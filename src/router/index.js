@@ -3,6 +3,8 @@ import Router from 'vue-router'
 
 import MarklistView from '../views/MarklistView.vue'
 import MovielistView from '../views/MovielistView.vue'
+import DashboardView from '../views/DashboardView.vue'
+
 
 Vue.use(Router)
 
@@ -14,9 +16,9 @@ export default new Router({
       component: MarklistView
     },
     {
-      path: '/bar',
-      namr:'barview',
-      component: {template:'<div>bar</div>'}
+      path: '/dashboard',
+      namr:'dashboardview',
+      component: DashboardView
     },
     {
       path: '/mov',

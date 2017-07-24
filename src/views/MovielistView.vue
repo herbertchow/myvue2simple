@@ -19,8 +19,9 @@ export default {
       list:[],
       // castslist:[],
       page:0,
+      footerClick:true,
       footer: {
-        title: '查看更多'
+        title: '加载中...'
       }
     }
   },
@@ -31,6 +32,11 @@ export default {
   	
   },
   methods: {
+    changeSrc (origin){
+      var newSrc = origin.replace(/movie\./g, "m.");
+      newSrc = newSrc.replace(/subject/g, "movie\/subject");
+      return newSrc;
+    },
     initData (data){
       for(var i=0,l=data.length;i<l;i++){
         var castslist = [];
@@ -40,17 +46,27 @@ export default {
         this.list.push({
           src:data[i]['images']['small'],
           title:data[i]['title'],
+          url:data[i]['alt'],
           desc:'类型：'+data[i]['genres'].toString() + ' | 主演：' +castslist.toString()
         })
       }
     },
     getApiData (){
-      console.log(this.page)
       var that = this;
+      if(!this.footerClick){
+        return;
+      }
+      console.log(this.page)
+      that.footer['title'] = '加载中...';
+      this.footerClick = false;
       jsonp('https://api.douban.com/v2/movie/top250?count=8&start='+8*that.page, null, function (err, data) {
         if (err) {
+          that.footerClick = true;
+          that.footer['title'] = '查看更多';
           console.error(err.message);
         } else {
+          that.footerClick = true;
+          that.footer['title'] = '查看更多';
           that.initData(data['subjects']);
           that.page++;
         }
@@ -75,5 +91,10 @@ export default {
   }
   .weui-media-box__desc{
     text-align: left;
+  }
+  .movielist-view{
+    .weui-media-box:before{
+      left: 0;
+    }
   }
 </style>

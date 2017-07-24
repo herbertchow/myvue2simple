@@ -62,7 +62,7 @@ export default {
         console.log(currentIndex)
         // console.log(this.currentIndex)
         if(currentIndex === 2){
-            this.$router.push('bar')
+            this.$router.push('dashboard')
         }else if(currentIndex === 1){
             this.$router.push('mov')
         }else{
@@ -70,7 +70,7 @@ export default {
         }
     },
     initTabStatus:function(){
-      if(this.$router.currentRoute.path === '/bar'){
+      if(this.$router.currentRoute.path === '/dashboard'){
         this.isSelected = 2;
       }else if(this.$router.currentRoute.path === '/mov'){
         this.isSelected = 1;
