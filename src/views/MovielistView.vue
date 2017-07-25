@@ -43,6 +43,10 @@ export default {
         // console.log(window.sessionStorage.getItem('movieList'))
       }
     },
+    resetGetMore (el){
+      el.footerClick = true;
+      el.footer['title'] = '查看更多';
+    },
     initData (data){
       for(var i=0,l=data.length;i<l;i++){
         var castslist = [];
@@ -67,12 +71,10 @@ export default {
       this.footerClick = false;
       jsonp('https://api.douban.com/v2/movie/top250?count=8&start='+8*that.page, null, function (err, data) {
         if (err) {
-          that.footerClick = true;
-          that.footer['title'] = '查看更多';
+          that.resetGetMore(that);
           console.error(err.message);
         } else {
-          that.footerClick = true;
-          that.footer['title'] = '查看更多';
+          that.resetGetMore(that);
           that.initData(data['subjects']);
           that.page++;
           that.copyToSession();
@@ -85,11 +87,10 @@ export default {
       if(window.sessionStorage && window.sessionStorage.getItem('movieList')){
         this.list = JSON.parse(window.sessionStorage.getItem('movieList'));
         this.page = (this.list.length||0)/8;
-        console.log(this.page);
+        this.resetGetMore(this);
         return;
       }
       this.page = (this.list.length||0)/8;
-      console.log(this.page);
   		this.getApiData();
   	})
   },
