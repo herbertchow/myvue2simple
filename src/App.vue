@@ -62,11 +62,11 @@ export default {
         console.log(currentIndex)
         // console.log(this.currentIndex)
         if(currentIndex === 2){
-            this.$router.push('dashboard')
+            this.$router.push('/dashboard')
         }else if(currentIndex === 1){
-            this.$router.push('mov')
+            this.$router.push('/mov')
         }else{
-            this.$router.push(' ')
+            this.$router.push('/')
         }
     },
     initTabStatus:function(){
