@@ -13,7 +13,7 @@
               <label for="female">女</label>
               <input type="radio" name="picked" value="2" v-model="sex" id="female">
             </div>
-            <x-input class="add-txt" :placeholder="'昵称最多12字或字符'" :max="13" v-show="editType" title="" v-model="name"></x-input> 
+            <x-input class="edit-txt" :placeholder="'昵称最多12字或字符'" :max="13" v-show="editType" title="" v-model="name"></x-input> 
           </span>
           <x-button class="edit-btn" mini v-show="!editType" type="default" @click.native="onButtonClick()">编辑</x-button> 
           <x-button class="confirm-btn" mini v-show="editType" type="primary" @click.native="onButtonClick()">确认</x-button>
@@ -113,127 +113,100 @@ export default {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .avatar-wrap{
-    text-align: left;
-    span{
-      width: 55%;
-      display: inline-block;
-      margin-left: 15px;
-      float: left;
-      position: relative;
-    }
-    img{
-      vertical-align: top;
-      float: left;
-      width: 25%;
-      max-width: 70px;
-      max-height: 70px;
-    }
-    i{
-      display: block;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 1.41176471;
-      min-height: 1.41176471em;
-      &.i-show{
-        visibility: hidden;
+  .dashboard-view{
+    .avatar-wrap{
+      text-align: left;
+      span{
+        width: 55%;
+        display: inline-block;
+        margin-left: 15px;
+        float: left;
+        position: relative;
+      }
+      img{
+        vertical-align: top;
+        float: left;
+        width: 25%;
+        max-width: 70px;
+        max-height: 70px;
+      }
+      i{
+        display: block;
+        font-weight: normal;
+        font-style: normal;
+        line-height: 1.41176471;
+        min-height: 1.41176471em;
+        &.i-show{
+          visibility: hidden;
+        }
+      }
+      em{
+        display: block;
+        font-weight: normal;
+        font-style: normal;
+        margin-top: 10px;
+      }
+      .edit-btn,.confirm-btn{
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        margin: 0;
+      }
+      .weui-btn + .weui-btn{
+        margin: 0;
       }
     }
-    em{
-      display: block;
-      font-weight: normal;
-      font-style: normal;
+    .desc{
+      .weui-cell__ft{
+        box-flex: 3;
+        flex:3;
+        text-align: left;
+      }
+    }
+  	.demo-content {
+  	  padding: 10px 10px;
+  	}
+  	
+    .vux-cell-box > div{
+      width: 100%;
+      &:after{
+        display: block;
+        height: 0;
+        content: "\0020";
+        clear: both;
+      }
+    }
+    .weui-cell.edit-txt{
+      .bb();
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0;
+      &:before{
+        border-top: none;
+        border-bottom: 1px solid #d9d9d9;
+        left:0;
+        top: auto;
+        bottom: -5px;
+      }
+    }
+    .weui-cell_warn .weui-icon-warn{
+      display: none!important;
+    }
+    .sex-selwrap{
       margin-top: 10px;
     }
-    .edit-btn,.confirm-btn{
-      position: absolute;
-      right: 5px;
-      top: 10px;
-      margin: 0;
+    .vux-x-input.weui-cell:before{
+      left: 0;
     }
-    .weui-btn + .weui-btn{
-      margin: 0;
-    }
-  }
-  .desc{
-    .weui-cell__ft{
-      box-flex: 3;
-      flex:3;
-      text-align: left;
-    }
-  }
-	.demo-content {
-	  padding: 10px 10px;
-	}
-	.marklist-view{
-		position: relative;
-		padding-bottom: 50px;
-	}
-	.vux-1px-t{
-		position: relative;
-		font-size: 16px;
-		text-align: left;
-		padding: 15px 20px;
-		border-bottom: 1px solid #eee;
-	}
-	.add-wrap{
-    position: fixed;
-    bottom: 50px;
-    left: 0;
-    width: 85%;
-    .weui-cells{
-    	border-top: 1px solid #bbb;
-    }
-	}
-	.add-btn.yes{
-    position: fixed;
-    bottom: 50px;
-    right: 0;
-    width: 15%;
-    border-radius: 0;
-    height: 45px;
-    text-align: center;
-    padding: 0;
-	}
-  .vux-cell-box > div{
-    width: 100%;
-    &:after{
-      display: block;
-      height: 0;
-      content: "\0020";
-      clear: both;
-    }
-  }
-  .weui-cell.add-txt{
-    .bb();
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0;
-    &:before{
-      border-top: none;
-      border-bottom: 1px solid #d9d9d9;
-      left:0;
-      top: auto;
-      bottom: -5px;
-    }
-  }
-  .weui-cell_warn .weui-icon-warn{
-    display: none!important;
-  }
-  .sex-selwrap{
-    margin-top: 10px;
-  }
-  .vux-x-input.weui-cell:before{
-    left: 0;
-  }
-  .main-wrap-edit{
-    .vux-x-input.weui-cell{
-      padding-left: 10px;
-    }
-    .weui-label{
-      font-size: .28rem;
+    .main-wrap-edit{
+      .vux-x-input.weui-cell{
+        padding-left: 10px;
+      }
+      .weui-label{
+        font-size: .28rem;
+      }
     }
   }
 </style>
