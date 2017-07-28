@@ -2,6 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index.js'
 
+import store from './store/index.js'
+
+
 Vue.use({router:router})
 
 Vue.config.productionTip = false
@@ -39,6 +42,7 @@ var vm = new Vue({
   // render: h => h(App) //这一行效同下面两行，用于没有编译器的vue模板，下面的需要编译器
   template: '<App/>',
   components: { App },
+  store,
   data:{
   	allT:[
         {
