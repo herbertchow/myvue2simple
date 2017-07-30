@@ -1,3 +1,4 @@
+const namespaced = true;
 
 const state = {
   allT:[
@@ -88,6 +89,7 @@ const actions = {
 }
 
 export default {
+  namespaced,
   state,
   mutations,
   getters,

@@ -88,7 +88,7 @@ export default {
 			//     console.log(data);
 			//   }
 			// });
-			console.log(this.$store['state']['marklist']['getters']);
+			console.log(this.$store.getters['marklist/getAllT'].splice(0,this.$store.getters['marklist/getAllT'].length));
       if(window.localStorage && window.localStorage.getItem('hbAllTask')){
       	this.allTask = JSON.parse(window.localStorage.getItem('hbAllTask'));
       	return;
