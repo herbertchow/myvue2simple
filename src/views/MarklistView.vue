@@ -2,9 +2,9 @@
 	<div class="marklist-view">
 		<swipeout>
 
-	      <swipeout-item v-for="item in allTask" :key="item.id" @on-close="handleEvents('on-close')" @on-open="handleEvents('on-open')" transition-mode="follow">
+	      <swipeout-item v-for="item in realDataArr" :key="item.id" @on-close="handleEvents('on-close')" @on-open="handleEvents('on-open')" transition-mode="follow">
 	        <div slot="right-menu">
-	          <swipeout-button @click.native="onButtonClick(item.id)" type="warn">删除</swipeout-button>
+	          <swipeout-button @click.native="onButtonClickDel(item.id)" type="warn">删除</swipeout-button>
 	        </div>
 	        <div slot="content" class="demo-content vux-1px-t">
 	        {{item.title}}
@@ -40,13 +40,16 @@ export default {
     }
   },
   computed: {
-  	
+  	realDataArr (){
+      // console.log(this.allTask.slice(0,this.allTask.length));
+      return this.allTask.slice(0,this.allTask.length);
+    }
   },
-  filter:{
+  filters:{
   	
   },
   methods: {
-  	onButtonClick (index) {
+  	onButtonClickDel (index) {
       this.allTask.splice(index-1,1);
       for(var i = 0,l=this.allTask.length;i<l;i++){
       	this.allTask[i]['id'] = i+1;
@@ -76,7 +79,6 @@ export default {
       if(window.localStorage){
       	window.localStorage.setItem('hbAllTask',JSON.stringify(this.$data.allTask));
       }
-      vm.$data.allT = this.allTask;
     }
   },
   created: function () {
@@ -88,12 +90,11 @@ export default {
 			//     console.log(data);
 			//   }
 			// });
-			console.log(this.$store.getters['marklist/getAllT'].splice(0,this.$store.getters['marklist/getAllT'].length));
       if(window.localStorage && window.localStorage.getItem('hbAllTask')){
       	this.allTask = JSON.parse(window.localStorage.getItem('hbAllTask'));
       	return;
       }
-  		this.allTask = vm.$data.allT;
+  		this.allTask = this.$store.getters['marklist/getAllT'];
   	})
   }
 }

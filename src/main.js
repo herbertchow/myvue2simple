@@ -42,40 +42,7 @@ var vm = new Vue({
   // render: h => h(App) //这一行效同下面两行，用于没有编译器的vue模板，下面的需要编译器
   template: '<App/>',
   components: { App },
-  store,
-  data:{
-  	allT:[
-        {
-          title:'你可以记录自己的便签',
-          id:1
-        },
-        {
-          title:'左滑删除',
-          id:2
-        },
-        {
-          title:'数据记录在本浏览器，更换即还原默认',
-          id:3
-        },
-        {
-          title:'清理缓存即可清空数据，还原默认',
-          id:4
-        },
-
-        {
-          title:'比如',
-          id:5
-        },
-        {
-          title:'今天要买水果',
-          id:6
-        },
-        {
-          title:'闹钟调了吗',
-          id:7
-        }
-    ]
-  }
+  store
 })
 
 // vm.use(router)

@@ -28,7 +28,7 @@ export default {
   computed: {
   	
   },
-  filter:{
+  filters:{
   	
   },
   methods: {
