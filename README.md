@@ -1,4 +1,12 @@
 
+# 个人便签
+# 技术栈
+"vue": "^2.3.3"
+"vue-router": "^2.7.0"
+"vuex": "^2.3.1"
+"vux": "^2.4.1"
+"webpack": "^2.6.1"
+
 # myvue2simple
 
 > vue2_sim
