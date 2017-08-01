@@ -1,15 +1,14 @@
 <template>
   <div id="app">
     <view-box ref="viewBox"  :body-padding-bottom="'105px'" :style="'box-sizing:border-box;overflow:hidden;'">
-<<<<<<< HEAD
-        <x-header slot="header" :left-options="{showBack: false}" >ä¸ªäººå¤‡å¿˜å½•</x-header>
+        <x-header slot="header" :left-options="{showBack: false}" >¸öÈË±ãÇ©</x-header>
         <div class="viewboxmain" slot="default">
             <router-view></router-view>
             <div>
               <group>
-                <cell :title="'å‘¨é€†å¤©'" :value="'å“ˆå“ˆå“ˆ'" is-link disabled :arrow-direction="'down'" >{{this.$router.toString()}}</cell>
-                <cell title="title" value="value" :border-intent="false">å¾ˆå¥‡æ€ªå•Š</cell>
-                <cell title="title" value="das" inline-desc="å¾ˆå¥‡æ€ªå•Š2">2</cell>
+                <cell :title="'ÖÜÄæÌì'" :value="'¹ş¹ş¹ş'" is-link disabled :arrow-direction="'down'" ></cell>
+                <cell title="title" value="value" :border-intent="false">ºÜÆæ¹Ö°¡</cell>
+                <cell title="title" value="das" inline-desc="ºÜÆæ¹Ö°¡2">2</cell>
               </group>
             </div>
             <img src="./assets/logo.png" v-show="checked" v-bind:class="{'cur':isClass}" :istrue="reversedMessage">
@@ -59,31 +58,16 @@
             <p><pre>data: {{$data | json2($data)}}</pre></p>
         </div>
         <tabbar slot="bottom">
-            <tabbar-item selected>
-                <span slot="label">Wechat</span>
-            </tabbar-item>
-            <tabbar-item show-dot>
-                <span slot="label">Message</span>
-            </tabbar-item>
-            <tabbar-item link="/">
-                <span slot="label">Explore</span>
-=======
-        <x-header slot="header" :left-options="{showBack: false}" >ä¸ªäººä¾¿ç­¾</x-header>
-        <div class="viewboxmain" slot="default">
-            <router-view></router-view>
-        </div>
-        <tabbar slot="bottom">
             <tabbar-item :selected="isSelected==0?true:false"  @on-item-click="onItemClickCb">
-                <span slot="label">ä¾¿ç­¾</span>
+                <span slot="label">Wechat</span>
                 <!-- <span slot="icon">1</span> -->
             </tabbar-item>
             <tabbar-item :selected="isSelected==1?true:false" show-dot @on-item-click="onItemClickCb">
-                <span slot="label">ç”µå½±</span>
+                <span slot="label">Message</span>
                 <!-- <span slot="icon">1</span> -->
             </tabbar-item>
             <tabbar-item :selected="isSelected==2?true:false" link="/" @on-item-click="onItemClickCb">
-                <span slot="label">ä¸ªäºº</span>
->>>>>>> gh-pages
+                <span slot="label">Explore</span>
             </tabbar-item>
         </tabbar>
     </view-box>
@@ -94,27 +78,21 @@
 import { Group,Cell,XHeader,ViewBox,Tabbar } from 'vux'
 import { TabbarItem } from 'vux'
 
-<<<<<<< HEAD
-
-=======
->>>>>>> gh-pages
+console.log(TabbarItem)
 // console.log(vm)
 
 export default {
   name: 'app',
   data () {
     return {
-<<<<<<< HEAD
       msg: 'Welcome to Your Vue.js App',
-      text: "é€šè¿‡<b>v-text</b>æ–¹å¼ç»‘å®š,htmlæ ‡ç­¾åœ¨æ¸²æŸ“çš„æ—¶å€™è¢«æºç è¾“å‡ºäº†ã€‚",
+      text: "Í¨¹ı<b>v-text</b>·½Ê½°ó¶¨,html±êÇ©ÔÚäÖÈ¾µÄÊ±ºò±»Ô´ÂëÊä³öÁË¡£",
       checked  : true,
       picked   : 'one',
       selected : 'two',
       multiSelect: ['one', 'three'],
-      isClass : false
-=======
+      isClass : false,
       isSelected:0
->>>>>>> gh-pages
     }
   },
   filters: {
@@ -130,10 +108,6 @@ export default {
     Tabbar,
     TabbarItem
   },
-<<<<<<< HEAD
-  methods: {
-    
-=======
   created () {
     this.$nextTick(() => {
       // console.log(222)
@@ -148,17 +122,17 @@ export default {
         console.log(currentIndex)
         // console.log(this.currentIndex)
         if(currentIndex === 2){
-            this.$router.push('/dashboard')
+            this.$router.push('bar')
         }else if(currentIndex === 1){
-            this.$router.push('/mov')
+            this.$router.push('foo')
         }else{
-            this.$router.push('/')
+            this.$router.push(' ')
         }
     },
     initTabStatus:function(){
-      if(this.$router.currentRoute.path === '/dashboard'){
+      if(this.$router.currentRoute.path === '/bar'){
         this.isSelected = 2;
-      }else if(this.$router.currentRoute.path === '/mov'){
+      }else if(this.$router.currentRoute.path === '/foo'){
         this.isSelected = 1;
       }else{
         this.isSelected = 0;
@@ -167,7 +141,6 @@ export default {
   },
   watch:{
 
->>>>>>> gh-pages
   },
   computed: {
     // a computed getter
@@ -224,20 +197,11 @@ a {
   color: #42b983;
 }
 
-<<<<<<< HEAD
 img{
   opacity: .5;
   &.cur{
     opacity:1;
   }
 }
-=======
-// img{
-//   opacity: .5;
-//   &.cur{
-//     opacity:1;
-//   }
-// }
->>>>>>> gh-pages
 
 </style>

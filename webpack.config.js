@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/myvue2simple/dist/',
     filename: 'build.js'
   },
   module: {
@@ -39,6 +39,9 @@ module.exports = {
     ]
   },
   resolve: {
+
+    extensions: [' ', '.js', '.json', '.vue', '.scss','.less', '.css'],
+
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
     }
