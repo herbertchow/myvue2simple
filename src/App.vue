@@ -1,73 +1,6 @@
 <template>
   <div id="app">
     <view-box ref="viewBox"  :body-padding-bottom="'105px'" :style="'box-sizing:border-box;overflow:hidden;'">
-<<<<<<< HEAD
-        <x-header slot="header" :left-options="{showBack: false}" >个人备忘录</x-header>
-        <div class="viewboxmain" slot="default">
-            <router-view></router-view>
-            <div>
-              <group>
-                <cell :title="'周逆天'" :value="'哈哈哈'" is-link disabled :arrow-direction="'down'" >{{this.$router.toString()}}</cell>
-                <cell title="title" value="value" :border-intent="false">很奇怪啊</cell>
-                <cell title="title" value="das" inline-desc="很奇怪啊2">2</cell>
-              </group>
-            </div>
-            <img src="./assets/logo.png" v-show="checked" v-bind:class="{'cur':isClass}" :istrue="reversedMessage">
-            <h1 v-html="text"></h1>
-            <h2>Essential Links {{msg}} {{reversedMessage}}</h2>
-            <ul>
-              <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-              <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-              <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-              <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-            </ul>
-            <h2>Ecosystem</h2>
-            <ul>
-              <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-              <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-              <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-              <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-            </ul>
-            <p>
-            <input type="text" v-model="msg">
-            <input type="checkbox" v-model="checked">
-              {{checked ? "yes" : "no"}}
-            </p>
-
-            <p>
-              <input type="radio" name="picked" value="one" v-model="picked">
-              <input type="radio" name="picked" value="two" v-model="picked">
-              {{picked}}
-            </p>
-
-            <p>
-              <select v-model="selected">
-                <option>one</option>
-                <option>two</option>
-              </select>
-              {{selected}}
-            </p>
-
-            <p>
-              <select v-model="multiSelect" multiple>
-                <option>one</option>
-                <option>two</option>
-                <option>three</option>
-              </select>
-              {{multiSelect}}
-            </p>
-            <p><pre>data: {{$data | json2($data)}}</pre></p>
-        </div>
-        <tabbar slot="bottom">
-            <tabbar-item selected>
-                <span slot="label">Wechat</span>
-            </tabbar-item>
-            <tabbar-item show-dot>
-                <span slot="label">Message</span>
-            </tabbar-item>
-            <tabbar-item link="/">
-                <span slot="label">Explore</span>
-=======
         <x-header slot="header" :left-options="{showBack: false}" >个人便签</x-header>
         <div class="viewboxmain" slot="default">
             <router-view></router-view>
@@ -83,7 +16,6 @@
             </tabbar-item>
             <tabbar-item :selected="isSelected==2?true:false" link="/" @on-item-click="onItemClickCb">
                 <span slot="label">个人</span>
->>>>>>> gh-pages
             </tabbar-item>
         </tabbar>
     </view-box>
@@ -94,27 +26,14 @@
 import { Group,Cell,XHeader,ViewBox,Tabbar } from 'vux'
 import { TabbarItem } from 'vux'
 
-<<<<<<< HEAD
 
-=======
->>>>>>> gh-pages
 // console.log(vm)
 
 export default {
   name: 'app',
   data () {
     return {
-<<<<<<< HEAD
-      msg: 'Welcome to Your Vue.js App',
-      text: "通过<b>v-text</b>方式绑定,html标签在渲染的时候被源码输出了。",
-      checked  : true,
-      picked   : 'one',
-      selected : 'two',
-      multiSelect: ['one', 'three'],
-      isClass : false
-=======
       isSelected:0
->>>>>>> gh-pages
     }
   },
   filters: {
@@ -130,10 +49,6 @@ export default {
     Tabbar,
     TabbarItem
   },
-<<<<<<< HEAD
-  methods: {
-    
-=======
   created () {
     this.$nextTick(() => {
       // console.log(222)
@@ -167,7 +82,6 @@ export default {
   },
   watch:{
 
->>>>>>> gh-pages
   },
   computed: {
     // a computed getter
