@@ -98,8 +98,9 @@ export default {
 }
 </script>
 
+<style lang="less" src="./assets/css/_reset.less"></style>
 <style lang="less">
-@import "./assets/css/_reset.less";
+// @import "./assets/css/_reset.less";
 
 html,body{
     position: relative;
