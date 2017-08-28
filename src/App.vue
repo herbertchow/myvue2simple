@@ -138,20 +138,13 @@ a {
   color: #42b983;
 }
 
-<<<<<<< HEAD
-img{
-  opacity: .5;
-  &.cur{
-    opacity:1;
-  }
-}
-=======
+
 // img{
 //   opacity: .5;
 //   &.cur{
 //     opacity:1;
 //   }
 // }
->>>>>>> gh-pages
+
 
 </style>
